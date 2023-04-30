@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Video Block Example</title>
+  <style>
+    html,
+    body {
+      background-image: url("./image/background.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: url('./image/cursor.ico'), pointer !important;
+    }
+
+    .video-block {
+      display: inline-block;
+      margin: 10px;
+      position: relative;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      /* background-color: aquamarine; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -2;
+    }
+
+    .scroll-item {
+      font-size: 40px;
+      color: darkslategray;
+      line-height: 50px;
+      animation: anis 0.15s linear infinite;
+    }
+
+    .scroll-item:hover {
+      animation-play-state: paused;
+      
+    }
+
+    .g {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 300px;
+      height: 300px;
+      z-index: -1;
+    }
+
+    .yanzhi {
+      position: absolute;
+      top: 0px;
+      left: 25px;
+      width: 300px;
+      height: 300px;
+      z-index: -1;
+    }
+
+    .scroll-item:hover+.yanzhi {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./image/颜值.png");
+    }
+
+    .scroll-item:hover+.shenghuo {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./image/生活类.png");
+    }
+
+    .scroll-item:hover+.qingan {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./image/情感.png");
+    }
+
+    .scroll-item:hover+.gaoxiao {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./image/搞笑.png");
+    }
+
+    .scroll-item:hover+.meishi {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./image/美食.png");
+    }
+
+    .scroll-item:hover+.kepu {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./image/科普.png");
+    }
+
+    .scroll-item:hover+.jiaoyu {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./image/科普.png");
+    }
+
+
+
+    @keyframes anis {
+      0% {
+        opacity: 1;
+        transform: translateY(20%)
+      }
+
+      40% {
+        opacity: 0.5;
+        transform: translateY(-40%)
+      }
+
+      97% {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+
+      98% {
+        opacity: 0;
+        transform: translateY(-100%)
+      }
+
+      99% {
+        opacity: 0.5;
+        transform: translateY(40%)
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(20%)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="video-block" style="position: absolute;top: 100px; left: 200px;">
+    <div class="scroll-item" onclick="link('颜值类')" style="animation-duration: 10;">
+      颜值类
+    </div>
+    <div class="g yanzhi"></div>
+  </div>
+  <div class="video-block" style="position: absolute;top: 0px; right: 200px;">
+    <div class="scroll-item" onclick="link('生活类')" style="animation-duration: 10;">
+      生活类
+    </div>
+    <div class="g shenghuo"></div>
+  </div>
+  <div class="video-block" style="position: absolute;top: 300px; left: 600px;">
+    <div class="scroll-item" onclick="link('情感类')" style="animation-duration: 10;">
+      情感类
+    </div>
+    <div class="g qingan"></div>
+  </div>
+  <div class="video-block" style="position: absolute;top: 400px; right: 600px;">
+    <div class="scroll-item" onclick="link('搞笑类')" style="animation-duration: 10;">
+      搞笑类
+    </div>
+    <div class="g gaoxiao"></div>
+  </div>
+  <div class="video-block" style="position: absolute;bottom: 200px; left: 150px;">
+    <div class="scroll-item" onclick="link('美食类')" style="animation-duration: 10;">
+      美食类
+    </div>
+    <div class="g meishi"></div>
+  </div>
+  <div class="video-block" style="position: absolute;bottom: 0px; right: 800px;">
+    <div class="scroll-item" onclick="link('科普类')" style="animation-duration: 10;">
+      科普类
+    </div>
+    <div class="g kepu"></div>
+  </div>
+  <div class="video-block" style="position: absolute;bottom: 150px; right: 150px;">
+    <div class="scroll-item" onclick="link('教育类')" style="animation-duration: 10;">
+      教育类
+    </div>
+    <div class="g jiaoyu"></div>
+  </div>
+
+  <script>
+    function link(str) {
+      window.location.href = "./video.html?text=" + str;
+    }
+  </script>
+</body>
+
+</html>

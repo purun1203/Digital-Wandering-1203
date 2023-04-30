@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      cursor: url('./image/cursor.ico'), pointer !important;
+    }
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 900px;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    #bg-video::-webkit-media-controls {
+      display: none !important;
+    }
+
+    #play-button {
+      align-self: flex-end;
+    }
+
+    #play-button {
+      font-size: 30px;
+      color: aquamarine;
+      text-align: center;
+      line-height: 50px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration: none;
+    }
+
+    #lead {
+      width: 100%;
+      height: 140px;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #cancel,
+    #title,
+    #text {
+      width: 140px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color:gold;
+      font-size: 30px;
+    }
+
+    #title {
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <video id="bg-video">
+      <source src="./video/生活类开始烧香.mp4" type="video/mp4">
+      <!-- <source src="./your-video.webm" type="video/webm"> -->
+      Your browser does not support the video tag.
+    </video>
+    <div id="lead">
+      <div id="cancel" onclick="cancel()">返回</div>
+      <div id="title">DIGITAL WANDERING</div>
+      <div id="text"></div>
+    </div>
+    <button id="play-button">点击烧香</button>
+  </div>
+
+
+  <script>
+    const video = document.getElementById('bg-video');
+    const playButton = document.getElementById('play-button');
+    video.autoplay = false;
+    playButton.addEventListener('click', () => {video.play();});
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const clickedText = urlParams.get('text');
+    console.log("来着" + clickedText)
+    document.getElementById('text').innerText = clickedText;
+
+    function cancel(){
+      window.location.href="./text.html"
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Digital Wandering</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link rel="icon" href="#" />
+	<style>
+		video {
+			width: 1920px;
+			height: 1080px px;
+		}
+
+		body {
+			cursor: url('./image/cursor.ico'), pointer !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<video src="./video/封面.mp4" autoplay muted>>
+
+		</video>
+	</div>
+
+
+
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>点击任意位置跳转页面</title>
+	<script>
+		function goToNextPage() {
+			window.location.href = "text.html";
+		}
+	</script>
+	<style>
+		/* CSS 样式，用于设置页面的布局 */
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #ffffff;
+			color: #000000;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body onclick="goToNextPage()">
+	<h1>点击任意位置跳转页面</h1>
+	<p>点击任意位置将会跳转到下一页面。</p>
+</body>
+
+</html>
